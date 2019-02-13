@@ -1,6 +1,6 @@
 {
   "name": "crud-ufscar",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Execício da aula de web do curso ESS-Ufscar",
   "main": "app.js",
   "scripts": {
