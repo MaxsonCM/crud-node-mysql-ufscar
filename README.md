@@ -68,10 +68,12 @@ npm install nodemon -g
 
 
 * Exemplo comando POST usando o PostMan para recuperar um contato.
+
 `POST: localhost:3000/agenda/api/contato/16`
 ![Imagem postman post](https://docs.google.com/uc?id=1oo_Uxi6PfKvtSFvlIk0LJuDZlrpyoKR9)
 
 * Exemplo comando PUT usando o PostMan para alterar um contato o mesmo metodo pode inserir um contato novo inibindo o elemento age_id ou o deixando com 0.
+
 `PUT: localhost:3000/agenda/api`
 
 Body do PUT tipo JSON
@@ -86,5 +88,6 @@ Body do PUT tipo JSON
 ![Imagem postman put alterar](https://docs.google.com/uc?id=19d1QCeCC2p2vznRnbAPSWg-9eUHkswWr)
 
 * Exemplo comando DELETE usando o PostMan para excluir um contato.
+
 `DELETE: localhost:3000/agenda/api/17`
 ![Imagem postman delete](https://docs.google.com/uc?id=1fjYxZvpoQHsXzqWBxOz2Adi6LHBjECDM)
