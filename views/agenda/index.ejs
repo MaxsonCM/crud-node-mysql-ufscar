@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Agenda - Lista</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Page level plugin CSS-->
+  <link href="/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- CABEÇALHO DA PÁGINA -->
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+    <a class="navbar-brand mr-1" href="/agenda">AGENDA DE CONTATOS</a>
+    <a class="btn btn-success btn-sm" href="/agenda/contato/create">Novo</a>
+
+  </nav>
+  <div id="wrapper">
+
+
+<!-- LISTANDO OS CONTATOS -->
+<div id="content-wrapper">
+
+  <div class="container-fluid">
+
+        
+        <div class="card mb-3">
+          <div class="card-header">
+            <!--<i class="fas fa-table"></i>Relação de Contatos-->
+            <a class="btn btn-secondary btn-sm container-fluid" href="#"><b>RELAÇÃO DE CONTATOS</b></a>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <% if(agenda.length > 0) { %>
+                <form action="/agenda/" method="get">
+                    <div class="input-group">
+                      <input class="form-control" name="filtro" type="text" placeholder="Pesquisar contato..." />
+                      <div class="input-group-btn">                          
+                          <button class="btn btn-secondary" >Pesquisar</button>
+                      </div>
+                    </div>
+                 </form>
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    
+                    <!-- CABEÇALHO DA LISTA-->
+                    <thead>
+                      <tr>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Telefone</th>
+                      </tr>
+                    </thead>
+                    
+                    <!-- DADOS DA LISTA -->
+                    <tbody>
+                      <% for(var i=0; i<agenda.length;i++) { %>
+                          <tr>
+                            <td><%= agenda[i].age_nome%></td>
+                            <td><%= agenda[i].age_email%></td>
+                            <td><%= agenda[i].age_telefone%></td>
+                            <td>
+                              <button class="btn btn-group btn-primary" type="button" id="dropdownMenu1" 
+                                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                      Ações <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                    <a class="btn btn-warning" href="/agenda/contato/edit/<%= agenda[i].age_id%>">Editar</a>
+                                    <a class="btn btn-danger" href="/agenda/contato/delete/<%= agenda[i].age_id%>" type="submit">Excluir</a>
+                              </ul>
+                            </td>      
+                           </tr>
+                      <% } %>
+                    </tbody>
+              <% } else { %>
+                <div>Nenhum contato encontrado.</div>                
+                <form action="/agenda/" method="get">
+                  <button class="btn btn-secondary">Pesquisar</button>                  
+                </form>
+              <% } %>
+              </table>
+            </div>
+          </div>
+          
+        </div>
+
+        
+
+      </div>
+
+    </div>
+
+  </div>
+  
+  
+
+  
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Page level plugin JavaScript-->
+  <script src="/vendor/datatables/jquery.dataTables.js"></script>
+  <script src="/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin.min.js"></script>
+
+  <!-- Demo scripts for this page-->
+  <script src="/js/demo/datatables-demo.js"></script>
+
+</body>
+
+</html>
+

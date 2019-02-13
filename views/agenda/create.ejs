@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Agenda - Lista</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Page level plugin CSS-->
+  <link href="/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin.css" rel="stylesheet">
+  
+</head>
+
+<body id="page-top">
+
+  <!-- CABEÇALHO DA PÁGINA -->
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+    <a class="navbar-brand mr-1" href="/agenda">AGENDA DE CONTATOS</a>
+  </nav>
+  <div id="wrapper">
+
+  <div class="container">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header text-center font arial">CADASTRAR CONTATO</div>
+      <div class="card-body">
+          
+        <form id="contato" data-toggle="validador" role="form" action="/agenda/save" method="post">
+
+            <div class="form-group">
+                <label for="txtNome" class="control-label">NOME</label>
+                <input name="age_nome" class="form-control" placeholder="Informe seu nome" type="text" data-error="Informe seu nome."
+                    required>
+            </div>
+            <div class="form-group"> <label for="inputEmail" class="control-label">E-MAIL</label> 
+                <input name="age_email"
+                    class="form-control" placeholder="Digite seu E-mail" type="email" data-error="Por favor, informe um e-mail correto."
+                    required>
+                <div class="help-block with-errors"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">TELEFONE</label>
+                <input type="tel" class="form-control" name="age_telefone" placeholder="Informe seu Telefone" required>
+            </div>
+            
+            <div class="col-8">
+                
+                    <button type="submit" class="btn btn-success btn-md">Salvar</button>
+                    <a class="btn btn-secondary" href="/agenda">Lista</a>
+   
+            </div>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+</body>
+
+</html>
