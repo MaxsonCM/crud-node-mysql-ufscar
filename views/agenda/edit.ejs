@@ -26,7 +26,7 @@
 
   <!-- CABEÇALHO DA PÁGINA -->
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-    <a class="navbar-brand mr-1" href="/agenda">AGENDA DE CONTATOS</a>
+    <a class="navbar-brand mr-1" href="/">AGENDA DE CONTATOS</a>
   </nav>
   <div id="wrapper">
 
@@ -34,32 +34,37 @@
     <div class="card card-login mx-auto mt-5">
       <div class="card-header text-center font arial">EDITAR CONTATO</div>
       <div class="card-body">
-          
-        <form id="contato" data-toggle="validador" role="form" action="/agenda/contato/update/<%= contato[0].age_id%>" method="post">
+        <% if(contato.length > 0) { %>
+          <form id="contato" data-toggle="validador" role="form" action="/agenda/contato/update/<%= contato[0].age_id%>" method="post">
 
-            <div class="form-group">
-                <label for="txtNome" class="control-label">NOME</label>
-                <input name="age_nome" class="form-control" placeholder="Informe seu nome" type="text" data-error="Informe seu nome."  value="<%= contato[0].age_nome %>" required>
-            </div>
-            <div class="form-group"> <label for="inputEmail" class="control-label">E-MAIL</label> 
-                <input name="age_email"
-                    class="form-control" placeholder="Digite seu E-mail" type="email" data-error="Por favor, informe um e-mail correto."  value="<%= contato[0].age_email %>" required>
-                <div class="help-block with-errors"></div>
-            </div>
+              <div class="form-group">
+                  <label for="txtNome" class="control-label">NOME</label>
+                  <input name="age_nome" class="form-control" placeholder="Informe seu nome" type="text" data-error="Informe seu nome."  value="<%= contato[0].age_nome %>" required>
+              </div>
+              <div class="form-group"> <label for="inputEmail" class="control-label">E-MAIL</label> 
+                  <input name="age_email"
+                      class="form-control" placeholder="Digite seu E-mail" type="email" data-error="Por favor, informe um e-mail correto."  value="<%= contato[0].age_email %>" required>
+                  <div class="help-block with-errors"></div>
+              </div>
 
-            <div class="form-group">
-                <label for="exampleInputPassword1">TELEFONE</label>
-                <input type="tel" class="form-control" name="age_telefone" placeholder="Informe seu Telefone" value="<%= contato[0].age_telefone %>"  required>
-            </div>
-            
-            <div class="col-8">
-                
-                    <button type="submit" class="btn btn-success btn-md">Salvar</button>
-                    <a class="btn btn-secondary" href="/agenda">Lista</a>
-   
-            </div>
-        </form>
-        
+              <div class="form-group">
+                  <label for="exampleInputPassword1">TELEFONE</label>
+                  <input type="tel" class="form-control" name="age_telefone" placeholder="Informe seu Telefone" value="<%= contato[0].age_telefone %>"  required>
+              </div>
+              
+              <div class="col-8">
+                  
+                      <button type="submit" class="btn btn-success btn-md">Salvar</button>
+                      <a class="btn btn-secondary" href="/agenda">Lista</a>
+    
+              </div>
+          </form>
+          <% } else { %>
+            <div>Nenhum contato correspondente.</div>                
+            <form action="/agenda/" method="get">
+              <button class="btn btn-secondary">Voltar para Lista</button>                  
+            </form>
+          <% } %>
       </div>
     </div>
   </div>

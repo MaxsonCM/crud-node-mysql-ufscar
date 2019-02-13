@@ -19,14 +19,37 @@ con.connect((err)=>{
 var agendaController = {};
 
 agendaController.list = function (req, res) {
-    let filtro = ""
-    
-    if (req.query.filtro !== undefined ){
-        if (req.query.filtro.length > 0){
-            filtro = " WHERE age_nome LIKE '%" + req.query.filtro + "%'"
+    let meuWhere = ""
+    let contato = {filtro, nome, email, telefone} = req.query
+    if (contato.filtro !== undefined ){
+        if (contato.filtro.length > 0){
+            meuWhere = " ( age_nome LIKE '%" + contato.filtro + "%' OR\
+            age_email LIKE '%" + contato.filtro + "%' OR\
+            age_telefone LIKE '%" + contato.filtro + "%')"
         }
     }
-    con.query('SELECT * FROM agenda ' + filtro,(err, agenda, fields)=>{
+    if (contato.nome !== undefined ){
+        if (contato.nome.length > 0){
+            if (meuWhere.length > 0) meuWhere += " AND "
+            meuWhere += " age_nome LIKE '%" + contato.nome + "%' "
+        }
+    }
+    if (contato.email !== undefined ){
+        if (contato.email.length > 0){
+            if (meuWhere.length > 0) meuWhere += " AND "
+            meuWhere += " age_email LIKE '%" + contato.email + "%' "
+        }
+    }
+    if (contato.telefone !== undefined ){
+        if (contato.telefone.length > 0){
+            if (meuWhere.length > 0) meuWhere += " AND "
+            meuWhere += " age_telefone LIKE '%" + contato.telefone + "%' "
+        }
+    }
+    if (meuWhere.length > 0) {
+        meuWhere = " WHERE " + meuWhere
+    }
+    con.query('SELECT * FROM agenda ' + meuWhere,(err, agenda, fields)=>{
         if (!err){
             //console.log("List");
             //res.send(rows);
