@@ -8,20 +8,28 @@ Exercício da disciplina de WEB do Curso de Especialização em Engenharia de So
 
 * [Nodejs](https://nodejs.org/en/)
 * [Xampp Com MySql](https://www.apachefriends.org/pt_br/download.html)
-* Cópia do projeto
+* [Git (para realizar a cópia do projeto)](https://git-scm.com/)
+* [Cópia do projeto](https://github.com/MaxsonCM/crud-node-mysql-ufscar)
 
-Para copiar o código basta usar o comando do git para clonar o projeto.
+Para copiar o código fonte com o Git basta usar o comando para clonar o projeto segue o exemplo.
+
+```bash
+git clone https://github.com/MaxsonCM/crud-node-mysql-ufscar.git
+```
 
 **Após copiado o projeto e instalação do Nodejs entre no terminal `na pasta do projeto` e execute o comando a seguir:**
 
 ```bash
 npm install
 ```
+A configuração do banco de dados fica no arquivo conexao.js, caso o mysql esteja com outra configuração, só é necessário alterá-lo.
 
-Após a instalação das dependências dos módulos, `ainda no terminal` execute o comando.
+Após a instalação das dependências dos módulos, **ainda no terminal** execute o comando.
 ```bash
 node criaBd.js
 ```
+Esse módulas criará o banco de dados no MySql e também criará alguns registros para teste.
+
 Lembre-se de verificar se o serviço do MySql está instalado e ativo e na porta padrão 3306.
 
 ![Imagem XAMPP Control Panel](https://docs.google.com/uc?id=10wtb_CHi55JO8js_iglx7wBkUlhAuiL6)

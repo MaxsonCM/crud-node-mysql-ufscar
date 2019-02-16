@@ -57,7 +57,21 @@ const criarBase = function(){
                     if (err) throw err;
                     console.log("Procedure criada ou já existente!");                
                 });
-    
+				sql = "INSERT INTO agenda (age_nome, age_email, age_telefone)VALUES ('A','a@a.com','00-000-000');"
+				con.query(sql, function(err,result){
+                    if (err) throw err;
+                    console.log("Insert Contato A!");                
+                });
+				sql = "INSERT INTO agenda (age_nome, age_email, age_telefone)VALUES ('B','b@b.com','11-1111-1111');"
+				con.query(sql, function(err,result){
+                    if (err) throw err;
+                    console.log("Insert Contato B!");                
+                });
+                sql = "INSERT INTO agenda (age_nome, age_email, age_telefone)VALUES ('C','c@c.com','22-2222-2222');"
+				con.query(sql, function(err,result){
+                    if (err) throw err;
+                    console.log("Insert Contato C!");                
+                });
             });
         });
         con.end;
