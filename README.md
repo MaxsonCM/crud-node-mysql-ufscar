@@ -8,9 +8,13 @@ Exercício da disciplina de WEB do Curso de Especialização em Engenharia de So
 
 * [Nodejs](https://nodejs.org/en/)
 * [Xampp Com MySql](https://www.apachefriends.org/pt_br/download.html)
-* Cópia do projeto
+* [Git (para realizar a cópia do projeto)](https://git-scm.com/)
+* [Cópia do projeto](https://github.com/MaxsonCM/crud-node-mysql-ufscar)
 
-Para copiar o código basta usar o comando do git para clonar o projeto.
+Para copiar o código fonte com o Git basta usar o comando para clonar o projeto segue o exemplo.
+```bash
+git clone https://github.com/MaxsonCM/crud-node-mysql-ufscar.git
+```
 
 **Após copiado o projeto e instalação do Nodejs entre no terminal `na pasta do projeto` e execute o comando a seguir:**
 
