@@ -12,7 +12,6 @@ Exercício da disciplina de WEB do Curso de Especialização em Engenharia de So
 * [Cópia do projeto](https://github.com/MaxsonCM/crud-node-mysql-ufscar)
 
 Para copiar o código fonte com o Git basta usar o comando para clonar o projeto segue o exemplo.
-
 ```bash
 git clone https://github.com/MaxsonCM/crud-node-mysql-ufscar.git
 ```
