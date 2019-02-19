@@ -1,5 +1,7 @@
 # CRUD Nodejs & Express with Mysql
 
+[Versão em português](https://github.com/MaxsonCM/crud-node-mysql-ufscar/blob/master/README-PT.md)
+
 Exercise of the WEB discipline of the Specialization Course in Software Engineering 2018-2019.
 
 ## HOW TO INSTALL AND EXECUTE THE PROJECT
