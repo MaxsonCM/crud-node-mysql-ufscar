@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-require('../conexao.js');
+const MinhaCon = require('../conexao');
 
 var con = mysql.createConnection({
     host: MinhaCon.meuHost,

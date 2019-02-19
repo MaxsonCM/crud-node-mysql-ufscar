@@ -1,4 +1,4 @@
-global.MinhaCon = Object.freeze({
+module.exports = Object.freeze({
     meuHost: 'localhost',
     meuUsuario: 'root',
     minhaSenha: '',
