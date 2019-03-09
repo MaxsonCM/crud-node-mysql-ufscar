@@ -1,3 +1,5 @@
+![GitHub package.json version](https://img.shields.io/github/package-json/v/MaxsonCM/crud-node-mysql-ufscar.svg)
+
 # CRUD Nodejs & Express with Mysql
 
 [Versão em português](https://github.com/MaxsonCM/crud-node-mysql-ufscar/blob/master/README-PT.md)
