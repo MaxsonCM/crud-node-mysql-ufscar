@@ -1,3 +1,5 @@
+![GitHub package.json version](https://img.shields.io/github/package-json/v/MaxsonCM/crud-node-mysql-ufscar.svg)
+
 # CRUD Nodejs & Express com Mysql
 
 Exercício da disciplina de WEB do Curso de Especialização em Engenharia de Software 2018-2019.
