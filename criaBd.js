@@ -5,7 +5,8 @@ const criarBase = function(){
     let con = mysql.createConnection({
         host: MinhaCon.meuHost,
         user: MinhaCon.meuUsuario,
-        password: MinhaCon.minhaSenha
+        password: MinhaCon.minhaSenha,
+        port: MinhaCon.minhaPorta
     });
 
     con.connect(function(err) {
