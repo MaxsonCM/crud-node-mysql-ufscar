@@ -12,6 +12,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "dateformat": "^3.0.3",
+    "dotenv": "^7.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "mysql": "^2.16.0"

@@ -15,5 +15,5 @@ var index = require('./routes/index');
 app.use('/', index)
 app.use('/agenda', agenda)
 
-var port = process.env.PORT || 3000
+var port = process.env.HOSTPORT || 3000
 app.listen(port ,() => console.log("Sevidor está rodando no porta "+ port + " !"));
