@@ -264,4 +264,27 @@ agendaController.deleteAPI = function (req, res) {
     })
 };
 
+/*
+agendaController.Conectado = function () {
+    if (con.state === 'disconnected') {
+        res.jason({Result: false})
+    }else{
+        res.jason({Result: true})
+    }
+}
+
+agendaController.checkDB = function (req, res) {
+    con.query("SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '" + MinhaCon.minhaBase + "'", [req.params.id], (err, bd, fields)=>{
+        if (!err){
+            if (bd.length > 0){
+                res.jason({Result: true})
+            }else{
+                res.jason({Result: false})
+            }
+        }else{
+            res.jason({Result: false})
+        }
+    })
+}
+*/
 module.exports = agendaController;
