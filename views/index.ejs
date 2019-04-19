@@ -29,7 +29,7 @@
   <!-- CABEÇALHO DA PÁGINA -->
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand" href="#">AGENDA DE CONTATOS</a>
+    <a class="navbar-brand" href="#"><%= title %></a>
  
    </nav>
   <div id="wrapper">
@@ -60,16 +60,18 @@
                                 Versão do sistema: <%= process.env.npm_package_version%></font>
                             </b><p>
                             <b> <font size="3" color="#000000" face="Helvetica">
-                                Data: 13/02/2019</font>
+                                Data: <%= data %></font>
                             </b>
                         </a>
                 </div>
-
-                <div class="text-center"> 
-                        <a class="btn btn-success" href="/agenda">ENTRAR</a>
-                        
-                </div>
                 
+                <%//  if(dados <> undefined && dados <> null ) { %>
+                  <div class="text-center"> 
+                    <a class="btn btn-success" href="/agenda">ENTRAR</a>                        
+                  </div>
+                <%// } else { %>
+                
+                <%// }%>
                 
               </table>
             </div>

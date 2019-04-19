@@ -49,6 +49,8 @@ Provavelmente a execução do comando de criar o banco de dados não termine e s
 Agora que temos as dependências do projeto instalado e o banco de dados criado, podemos executar o projeto com o comando.
 ```bash
 npm start
+//OU
+mpn run test
 ```
 `OBS 1: A porta padrão deixado para subir o servidor do node é a 3000 e se encontra no arquivo app.js.`
 
