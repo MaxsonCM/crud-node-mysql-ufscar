@@ -10,20 +10,26 @@ router.get('/', function (req, res) {
 router.get('/contato/create', function (req, res) {
     agenda.create(req,res)
 });
+router.get('/api/contato', function (req, res) {
+    agenda.listAPI(req,res)
+});
 router.get('/contato/edit/:id', function (req, res) {
     agenda.edit(req, res)
 });
 router.get('/contato/delete/:id', function (req, res) {
     agenda.delete(req, res)
 });
+router.get('/api/contato/:filtro', function (req, res) {
+    agenda.listAPI(req,res)
+});
 router.get('/:filtro', function (req, res) {
     agenda.list(req, res)
 });
 
 
-//POSTs
-router.post('/api/contato/:id', function(req, res) {
-    agenda.showApi(req, res);
+//POSTs - inserir
+router.post('/api/contato/', function(req, res) {
+    agenda.saveApi(req, res);
 });
 router.post('/contato/delete/:id', function (req, res) {
     agenda.delete(req, res)
@@ -38,8 +44,11 @@ router.post('/', function (req, res) {
     agenda.list(req, res)
 });
 
-//PUTs
-router.put('/api', function (req, res) {
+//PUTs - updades 
+router.put('/api/contato', function (req, res) {
+    agenda.saveApi(req, res)
+});
+router.put('/api/contato/:id', function (req, res) {
     agenda.saveApi(req, res)
 });
 //DELETEs

@@ -152,6 +152,52 @@ agendaController.update = function (req, res) {
 };
 
 
+agendaController.listAPI = function (req, res) {
+    let meuWhere = ""
+    let contato = {filtro, nome, email, telefone, id} = req.query
+    if (contato.filtro !== undefined ){
+        if (contato.filtro.length > 0){
+            meuWhere = " ( age_nome LIKE '%" + contato.filtro + "%' OR\
+            age_email LIKE '%" + contato.filtro + "%' OR\
+            age_telefone LIKE '%" + contato.filtro + "%')"
+        }
+    }
+    if (contato.nome !== undefined ){
+        if (contato.nome.length > 0){
+            if (meuWhere.length > 0) meuWhere += " AND "
+            meuWhere += " age_nome LIKE '%" + contato.nome + "%' "
+        }
+    }
+    if (contato.email !== undefined ){
+        if (contato.email.length > 0){
+            if (meuWhere.length > 0) meuWhere += " AND "
+            meuWhere += " age_email LIKE '%" + contato.email + "%' "
+        }
+    }
+    if (contato.telefone !== undefined ){
+        if (contato.telefone.length > 0){
+            if (meuWhere.length > 0) meuWhere += " AND "
+            meuWhere += " age_telefone LIKE '%" + contato.telefone + "%' "
+        }
+    }
+    if (contato.id !== undefined ){
+        if (contato.id.length > 0){
+            if (meuWhere.length > 0) meuWhere += " AND "
+            meuWhere += " age_id = '" + contato.id + "'"
+        }
+    }
+    if (meuWhere.length > 0) {
+        meuWhere = " WHERE " + meuWhere
+    }
+    con.query('SELECT * FROM agenda ' + meuWhere,(err, agenda, fields)=>{
+        if (!err){
+            res.send({agenda: JSON.parse(JSON.stringify(agenda))});
+        }else{
+            console.log(err);
+        }
+    })
+};
+
 agendaController.showApi = function (req, res) {
     con.query('SELECT * FROM agenda WHERE age_id = ?', [req.params.id], (err, contato, fields)=>{
         if (!err){
