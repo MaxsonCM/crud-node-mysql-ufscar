@@ -80,7 +80,7 @@ npm install nodemon -g
 * Example POST command using [Postman](https://www.getpostman.com/) to retrieve a contact.
 
 ```bash
-POST: localhost:3000/agenda/api/contato/1
+POST: localhost:3000/agenda/api/contato/?id=1
 ```
 ![Image post command](https://docs.google.com/uc?id=1oo_Uxi6PfKvtSFvlIk0LJuDZlrpyoKR9)
 
@@ -88,7 +88,7 @@ POST: localhost:3000/agenda/api/contato/1
 * With the same method you can insert a new contact by inhibiting the age_id element or leaving it with 0.
 
 ```bash
-PUT: localhost:3000/agenda/api
+PUT: localhost:3000/agenda/api/contato/
 ```
 
 Body of PUT type JSON
