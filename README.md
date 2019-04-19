@@ -53,6 +53,8 @@ Probably the execution of the command to create the database does not finish and
 If all is right, we can execute the project with the command below.
 ```bash
 npm start
+//OR
+mpn run test
 ```
 `NOTE 1: The default server port is 3000 and is found in the app.js file.`
 
