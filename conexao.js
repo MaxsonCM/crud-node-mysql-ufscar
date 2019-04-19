@@ -1,6 +1,6 @@
 module.exports = Object.freeze({
-    meuHost: 'localhost',
-    meuUsuario: 'root',
-    minhaSenha: '',
-    minhaBase: 'meuBd'
+    meuHost: process.env.HOST || 'localhost',
+    meuUsuario: process.env.USER || 'root',
+    minhaSenha: process.env.PASS || '',
+    minhaBase: process.env.DBNAME || 'meuBd'
 })
