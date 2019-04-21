@@ -245,7 +245,9 @@ agendaController.saveApi = function (req, res) {
     }
     con.query(sql,[contato.age_id, contato.age_nome, contato.age_email, contato.age_telefone],(err, rows, fields) => {
         if (!err){
-            res.send(rows);
+            contato.age_id = rows.map(function () {return age_id})[0]
+            //contato.age_id = [{age_id}] = rows
+            res.send(contato);
         }else{
             console.log('Erro: ' + err);
         }
