@@ -267,10 +267,10 @@ agendaController.saveApi = function (req, res) {
 agendaController.deleteAPI = function (req, res) {
     con.query('DELETE FROM agenda WHERE age_id = ?',[req.params.id],(err, rows, fields)=>{
         if (!err){   
-            console.log("Linhas afetadas: " + rows.affectedRows)
-            res.send();
+            //console.log("Linhas afetadas: " + rows.affectedRows)
+            res.send({sucesso: true, mensagem: ""});
         }else{
-            res.send({result: "error", menssge: err});
+            res.send({sucesso: false, mensagem: err});
             console.log(err);
         }
     })
