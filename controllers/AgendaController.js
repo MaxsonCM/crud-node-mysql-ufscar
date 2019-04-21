@@ -50,7 +50,7 @@ agendaController.list = function (req, res) {
     if (meuWhere.length > 0) {
         meuWhere = " WHERE " + meuWhere
     }
-    con.query('SELECT * FROM agenda ' + meuWhere + ' ORDER BY age_nome, age_codigo',(err, agenda, fields)=>{
+    con.query('SELECT * FROM agenda ' + meuWhere + ' ORDER BY age_nome, age_id',(err, agenda, fields)=>{
         if (!err){
             //console.log("List");
             //res.send(rows);
@@ -199,7 +199,7 @@ agendaController.listAPI = function (req, res) {
     if (meuWhere.length > 0) {
         meuWhere = " WHERE " + meuWhere
     }
-    con.query('SELECT * FROM agenda ' + meuWhere + ' ORDER BY age_nome, age_codigo',(err, agenda, fields)=>{
+    con.query('SELECT * FROM agenda ' + meuWhere + ' ORDER BY age_nome, age_id',(err, agenda, fields)=>{
         if (!err){
             res.send(agenda);
         }else{
