@@ -191,9 +191,10 @@ agendaController.listAPI = function (req, res) {
     }
     con.query('SELECT * FROM agenda ' + meuWhere,(err, agenda, fields)=>{
         if (!err){
-            res.send({agenda: JSON.parse(JSON.stringify(agenda))});
+            res.send(agenda);
         }else{
             console.log(err);
+            //res.send({});
         }
     })
 };
