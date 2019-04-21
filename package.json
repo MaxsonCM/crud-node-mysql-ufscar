@@ -4,7 +4,7 @@
   "description": "Execício da aula de web do curso ESS-Ufscar",
   "main": "app.js",
   "scripts": {
-    "start": "node",
+    "start": "node app.js",
     "test": "nodemon"
   },
   "author": "Abel & Maxson",
