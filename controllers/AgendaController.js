@@ -21,6 +21,7 @@ var agendaController = {};
 agendaController.list = function (req, res) {
     let meuWhere = ""
     let contato = {filtro, nome, email, telefone} = req.query
+    
     if (contato.filtro !== undefined ){
         if (contato.filtro.length > 0){
             meuWhere = " ( age_nome LIKE '%" + contato.filtro + "%' OR\
@@ -155,6 +156,15 @@ agendaController.update = function (req, res) {
 agendaController.listAPI = function (req, res) {
     let meuWhere = ""
     let contato = {filtro, nome, email, telefone, id} = req.query
+    
+    if ([req.params.filtro] !== undefined ){
+        let filtro = [req.params.filtro]
+        if (filtro.length  > 0){
+            meuWhere = " ( age_nome LIKE '%" + filtro + "%' OR\
+            age_email LIKE '%" + filtro + "%' OR\
+            age_telefone LIKE '%" + filtro  + "%')"
+        }
+    }
     if (contato.filtro !== undefined ){
         if (contato.filtro.length > 0){
             meuWhere = " ( age_nome LIKE '%" + contato.filtro + "%' OR\
@@ -246,7 +256,6 @@ agendaController.saveApi = function (req, res) {
     con.query(sql,[contato.age_id, contato.age_nome, contato.age_email, contato.age_telefone],(err, rows, fields) => {
         if (!err){
             contato.age_id = rows.map(function () {return age_id})[0]
-            //contato.age_id = [{age_id}] = rows
             res.send(contato);
         }else{
             console.log('Erro: ' + err);
