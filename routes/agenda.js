@@ -12,18 +12,22 @@ router.get('/contato/create', function (req, res) {
 });
 router.get('/api/contato', function (req, res) {
     agenda.listAPI(req,res)
+    //console.log("GET/api/contato")
 });
 router.get('/contato/edit/:id', function (req, res) {
     agenda.edit(req, res)
 });
 router.get('/contato/delete/:id', function (req, res) {
     agenda.delete(req, res)
+    //console.log("GET/contato/delete/:id")
 });
 router.get('/api/contato/:filtro', function (req, res) {
     agenda.listAPI(req,res)
+    //console.log("GET/api/contato/:filtro")
 });
 router.get('/:filtro', function (req, res) {
     agenda.list(req, res)
+    //console.log("GET/:filtro")
 });
 
 
