@@ -22,6 +22,14 @@ agendaController.list = function (req, res) {
     let meuWhere = ""
     let contato = {filtro, nome, email, telefone} = req.query
     
+    if ([req.params.filtro] !== undefined ){
+        let filtro = [req.params.filtro]
+        if (filtro.length  > 0){
+            meuWhere = " ( age_nome LIKE '%" + filtro + "%' OR\
+            age_email LIKE '%" + filtro + "%' OR\
+            age_telefone LIKE '%" + filtro  + "%')"
+        }
+    }
     if (contato.filtro !== undefined ){
         if (contato.filtro.length > 0){
             meuWhere = " ( age_nome LIKE '%" + contato.filtro + "%' OR\
