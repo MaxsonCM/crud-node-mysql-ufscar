@@ -65,14 +65,25 @@
                         </a>
                 </div>
                 
-                <%//  if(dados <> undefined && dados <> null ) { %>
+                <%//  if(dados !== undefined && dados !== null ) { %>
                   <div class="text-center"> 
                     <a class="btn btn-success" href="/agenda">ENTRAR</a>                        
                   </div>
                 <%// } else { %>
-                
+                  
                 <%// }%>
                 
+                
+                <% try { %>
+                  <% if ( qrcode !== undefined ) { %>
+                    <br/>
+                    <div class="text-center">                       
+                      <img src="<%= qrcode %>"/>
+                      <p>Baixe Nosso APK</p>
+                    </div>
+                  <% } %>
+                <% } catch(err) { } %>
+                      
               </table>
             </div>
           </div>
