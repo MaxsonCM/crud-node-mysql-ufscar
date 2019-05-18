@@ -26,14 +26,20 @@ const criarBase = function(){
             con.connect(function(err){
                 if(err) throw err;
                 console.log("Conectado na Base " + MinhaCon.minhaBase + " !");
-                var sql = "CREATE TABLE IF NOT EXISTS agenda (age_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, age_nome VARCHAR(255), age_email VARCHAR(255), age_telefone VARCHAR(255))";
                 
+                var sql = "CREATE TABLE IF NOT EXISTS agenda (age_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, age_nome VARCHAR(255), age_email VARCHAR(255), age_telefone VARCHAR(255))"                
                 con.query(sql, function(err, result){
                     if (err) throw err;
                     console.log("Tabela criada ou já existente!");                
                 });
-    
-                sql = "CREATE PROCEDURE IF NOT EXISTS AgendaAddOrEdit ("
+                
+                sql = 'DROP procedure IF EXISTS AgendaAddOrEdit'
+                con.query(sql, function(err,result){
+                    if (err) throw err;
+                    console.log("Excluisão da Procedure case exista!");                
+                });
+
+                sql = "CREATE PROCEDURE AgendaAddOrEdit ("
                 sql += "IN _age_id INT,"
                 sql += "IN _age_nome VARCHAR(255),"
                 sql += "IN _age_email VARCHAR(255),"
@@ -54,25 +60,30 @@ const criarBase = function(){
                 sql += " END IF;" + String.fromCharCode(10)
                 sql += " SELECT _age_id AS 'age_id';" + String.fromCharCode(10)
                 sql += "END"
+
                 con.query(sql, function(err,result){
                     if (err) throw err;
                     console.log("Procedure criada ou já existente!");                
                 });
+
 				sql = "INSERT INTO agenda (age_nome, age_email, age_telefone)VALUES ('A','a@a.com','00-000-000');"
 				con.query(sql, function(err,result){
                     if (err) throw err;
                     console.log("Insert Contato A!");                
                 });
+
 				sql = "INSERT INTO agenda (age_nome, age_email, age_telefone)VALUES ('B','b@b.com','11-1111-1111');"
 				con.query(sql, function(err,result){
                     if (err) throw err;
                     console.log("Insert Contato B!");                
                 });
+
                 sql = "INSERT INTO agenda (age_nome, age_email, age_telefone)VALUES ('C','c@c.com','22-2222-2222');"
 				con.query(sql, function(err,result){
                     if (err) throw err;
                     console.log("Insert Contato C!");                
                 });
+
             });
         });
         con.end;
